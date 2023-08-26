@@ -7,10 +7,18 @@ interface IUserRepo {
     + updateUser(user: User): void
 }
 
+class UserRepoImpl implements IUserRepo {
+
+}
+
 interface ITicketRepo {
     + addTicket(ticket: Ticket): void
     + removeTicket(ticket: Ticket): void
     + getTickets(): List<Ticket>
+}
+
+class TicketRepoImpl implements ITicketRepo {
+
 }
 
 class UserService {
@@ -121,8 +129,8 @@ TicketValidator --> Ticket
 TransactionService "1" -- "many" Ticket
 TransactionService "1" -- "many" User
 ShoppingCart --* User
-TicketService --o ITicketRepo
-UserService --o IUserRepo
+TicketService --o TicketRepoImpl
+UserService --o UserRepoImpl
 
 
 Ticket <|-- TheaterTicket
