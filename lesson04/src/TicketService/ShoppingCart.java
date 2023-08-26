@@ -2,7 +2,7 @@ package TicketService;
 import java.util.ArrayList;
 import java.util.List;
 
-import TicketService.TicketCalsses.Ticket;
+import TicketService.TicketClasses.Ticket;
 public class ShoppingCart {
     private List<Ticket> tickets;
 
@@ -20,5 +20,11 @@ public class ShoppingCart {
 
     public List<Ticket> getTickets() {
         return tickets;
+    }
+    @Override
+    public String toString() {
+        return "ShoppingCart{" +
+                "tickets=" + tickets +
+                '}';
     }
 }

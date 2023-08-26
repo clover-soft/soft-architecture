@@ -1,23 +1,25 @@
 package TicketService.Services;
-import TicketService.TicketCalsses.Ticket;
+import TicketService.TicketClasses.Ticket;
+import TicketService.Repo.ITicketRepo;
 import java.util.List;
-import java.util.ArrayList;
-public class TicketService {
-    private List<Ticket> tickets;
 
-    public TicketService() {
-        tickets = new ArrayList<>();
+// Класс TicketService
+public class TicketService {
+    private ITicketRepo ticketRepo;
+
+    public TicketService(ITicketRepo ticketRepo) {
+        this.ticketRepo = ticketRepo;
     }
 
     public void addTicket(Ticket ticket) {
-        tickets.add(ticket);
+        ticketRepo.addTicket(ticket);
     }
 
     public void removeTicket(Ticket ticket) {
-        tickets.remove(ticket);
+        ticketRepo.removeTicket(ticket);
     }
 
     public List<Ticket> getTickets() {
-        return tickets;
+        return ticketRepo.getTickets();
     }
 }

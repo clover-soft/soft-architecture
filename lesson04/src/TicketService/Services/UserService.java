@@ -1,25 +1,29 @@
 package TicketService.Services;
-import java.util.ArrayList;
 import java.util.List;
-
+import TicketService.Repo.IUserRepo;
 import TicketService.User;
 
+// Класс UserService
 public class UserService {
-    private List<User> users;
+    private IUserRepo userRepo;
 
-    public UserService() {
-        users = new ArrayList<>();
+    public UserService(IUserRepo userRepo) {
+        this.userRepo = userRepo;
     }
 
     public void addUser(User user) {
-        users.add(user);
+        userRepo.addUser(user);
     }
 
     public void removeUser(User user) {
-        users.remove(user);
+        userRepo.removeUser(user);
     }
 
     public List<User> getUsers() {
-        return users;
+        return userRepo.getUsers();
+    }
+
+    public void updateUser(User user) {
+        userRepo.updateUser(user);
     }
 }

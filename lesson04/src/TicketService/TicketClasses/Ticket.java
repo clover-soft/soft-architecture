@@ -1,4 +1,4 @@
-package TicketService.TicketCalsses;
+package TicketService.TicketClasses;
 import java.time.LocalDateTime;
 
 public abstract class Ticket {

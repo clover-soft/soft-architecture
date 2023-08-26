@@ -1,4 +1,4 @@
-package TicketService.TicketCalsses;
+package TicketService.TicketClasses;
 public class CinemaTicket extends Ticket {
     private String movieName;
     private String cinemaName;

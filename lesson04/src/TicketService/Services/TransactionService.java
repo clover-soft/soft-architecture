@@ -2,7 +2,7 @@ package TicketService.Services;
 import java.util.List;
 
 import TicketService.User;
-import TicketService.TicketCalsses.Ticket;
+import TicketService.TicketClasses.Ticket;
 
 public class TransactionService {
     public void makeTransaction(User user, List<Ticket> tickets) {

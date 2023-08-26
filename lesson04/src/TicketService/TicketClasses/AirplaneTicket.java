@@ -1,4 +1,4 @@
-package TicketService.TicketCalsses;
+package TicketService.TicketClasses;
 public class AirplaneTicket extends Ticket {
     private String flightNumber;
     private String airline;

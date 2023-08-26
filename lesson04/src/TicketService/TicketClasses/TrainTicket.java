@@ -1,4 +1,4 @@
-package TicketService.TicketCalsses;
+package TicketService.TicketClasses;
 public class TrainTicket extends Ticket {
     private String trainNumber;
     private String railwayCompany;
@@ -30,4 +30,18 @@ public class TrainTicket extends Ticket {
         System.out.println("Date: " + getDate());
         System.out.println("Is Valid: " + isValid());
     }
+    @Override
+    public String toString() {
+        StringBuilder ticketDetails = new StringBuilder();
+        ticketDetails.append("Train Ticket Details:\n");
+        ticketDetails.append("Train Number: ").append(trainNumber).append("\n");
+        ticketDetails.append("Railway Company: ").append(railwayCompany).append("\n");
+        ticketDetails.append("Root Number: ").append(getRootNumber()).append("\n");
+        ticketDetails.append("Price: ").append(getPrice()).append("\n");
+        ticketDetails.append("Place: ").append(getPlace()).append("\n");
+        ticketDetails.append("Date: ").append(getDate()).append("\n");
+        ticketDetails.append("Is Valid: ").append(isValid()).append("\n");
+        return ticketDetails.toString();
+    }
+    
 }

@@ -1,12 +1,28 @@
 @startuml TicketService
 
-class UserService {
+interface IUserRepo {
     + addUser(user: User): void
     + removeUser(user: User): void
     + getUsers(): List<User>
+    + updateUser(user: User): void
+}
+
+interface ITicketRepo {
+    + addTicket(ticket: Ticket): void
+    + removeTicket(ticket: Ticket): void
+    + getTickets(): List<Ticket>
+}
+
+class UserService {
+    - userRepo: IUserRepo
+    + addUser(user: User): void
+    + removeUser(user: User): void
+    + getUsers(): List<User>
+    + updateUser(user: User): void
 }
 
 class TicketService {
+    - ticketRepo: ITicketRepo
     + addTicket(ticket: Ticket): void
     + removeTicket(ticket: Ticket): void
     + getTickets(): List<Ticket>
@@ -105,6 +121,9 @@ TicketValidator --> Ticket
 TransactionService "1" -- "many" Ticket
 TransactionService "1" -- "many" User
 ShoppingCart --* User
+TicketService --o ITicketRepo
+UserService --o IUserRepo
+
 
 Ticket <|-- TheaterTicket
 Ticket <|-- CinemaTicket
