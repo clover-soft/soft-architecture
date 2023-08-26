@@ -1,0 +1,114 @@
+@startuml TicketService
+
+class UserService {
+    + addUser(user: User): void
+    + removeUser(user: User): void
+    + getUsers(): List<User>
+}
+
+class TicketService {
+    + addTicket(ticket: Ticket): void
+    + removeTicket(ticket: Ticket): void
+    + getTickets(): List<Ticket>
+}
+
+abstract class Ticket {
+    + rootNumber: long
+    + price: double
+    + place: int
+    + date: DateTime
+    + isValid: bool
+    + getRootNumber(): long
+    + setRootNumber(rootNumber: long): void
+    + getPrice(): double
+    + setPrice(price: double): void
+    + getPlace(): int
+    + setPlace(place: int): void
+    + getDate(): DateTime
+    + setDate(date: DateTime): void
+    + isValid(): bool
+    + setValid(isValid: bool): void
+    + abstract printTicketDetails(): void
+}
+
+class TheaterTicket {
+    + playName: string
+    + theaterName: string
+    + getPlayName(): string
+    + setPlayName(playName: string): void
+    + getTheaterName(): string
+    + setTheaterName(theaterName: string): void
+    + printTicketDetails(): void
+}
+
+class CinemaTicket {
+    + movieName: string
+    + cinemaName: string
+    + getMovieName(): string
+    + setMovieName(movieName: string): void
+    + getCinemaName(): string
+    + setCinemaName(cinemaName: string): void
+    + printTicketDetails(): void
+}
+
+class AirplaneTicket {
+    + flightNumber: string
+    + airline: string
+    + getFlightNumber(): string
+    + setFlightNumber(flightNumber: string): void
+    + getAirline(): string
+    + setAirline(airline: string): void
+    + printTicketDetails(): void
+}
+
+class TrainTicket {
+    + trainNumber: string
+    + railwayCompany: string
+    + getTrainNumber(): string
+    + setTrainNumber(trainNumber: string): void
+    + getRailwayCompany(): string
+    + setRailwayCompany(railwayCompany: string): void
+    + printTicketDetails(): void
+}
+
+class TransactionService {
+    + makeTransaction(user: User, tickets: List<Ticket>): void
+}
+
+class TicketValidator {
+    + validateTicket(ticket: Ticket): bool
+}
+
+class User {
+    + id: int
+    + name: string
+    + email: string
+    + password: string
+    + shoppingCart: ShoppingCart
+    + getId(): int
+    + setId(id: int): void
+    + getName(): string
+    + setName(name: string): void
+    + getEmail(): string
+    + setEmail(email: string): void
+    + getPassword(): string
+    + setPassword(password: string): void
+}
+
+class ShoppingCart {
+    + tickets: List<Ticket>
+}
+
+UserService "1" -- "many" User
+TicketService "1" -- "many" Ticket
+TicketValidator --> Ticket
+TransactionService "1" -- "many" Ticket
+TransactionService "1" -- "many" User
+ShoppingCart --* User
+
+Ticket <|-- TheaterTicket
+Ticket <|-- CinemaTicket
+Ticket <|-- AirplaneTicket
+Ticket <|-- TrainTicket
+
+@enduml
