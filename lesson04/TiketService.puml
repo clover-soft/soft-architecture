@@ -99,10 +99,6 @@ class TransactionService {
     + makeTransaction(user: User, tickets: List<Ticket>): void
 }
 
-class TicketValidator {
-    + validateTicket(ticket: Ticket): bool
-}
-
 class User {
     + id: int
     + name: string
@@ -125,7 +121,6 @@ class ShoppingCart {
 
 UserService "1" -- "many" User
 TicketService "1" -- "many" Ticket
-TicketValidator <-- Ticket
 TransactionService "1" -- "many" Ticket
 TransactionService "1" -- "many" User
 ShoppingCart --* User
