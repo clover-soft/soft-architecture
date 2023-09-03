@@ -125,12 +125,12 @@ class ShoppingCart {
 
 UserService "1" -- "many" User
 TicketService "1" -- "many" Ticket
-TicketValidator --> Ticket
+TicketValidator <-- Ticket
 TransactionService "1" -- "many" Ticket
 TransactionService "1" -- "many" User
 ShoppingCart --* User
-TicketService --o TicketRepoImpl
-UserService --o UserRepoImpl
+TicketService o-- TicketRepoImpl
+UserService o--  UserRepoImpl
 
 
 Ticket <|-- TheaterTicket
