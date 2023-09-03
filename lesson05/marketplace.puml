@@ -132,7 +132,7 @@ package "Data layer" <<Database>> {
 
     class UserCartModel {
         +userId: long
-        +items: List<OrderModel>
+        +items: List<ProductModel>
     }
 
     enum OrderStatus {
