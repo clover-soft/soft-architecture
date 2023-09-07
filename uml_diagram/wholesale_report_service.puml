@@ -53,8 +53,8 @@ package "DataLayer" <<database>> {
     getAll(): List<Customer>
   }
   interface IOrdersRepo {
-    getById(id: int): Order
-    getOrderItems()
+    getById(orderId: int): Order
+    getOrderItems(orderId: int): List<OrderItemModel>
     getOrders(*report params*):List<OrderModel>
   }
   interface IProductRepo {
