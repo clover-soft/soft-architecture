@@ -1,0 +1,59 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: Cloud Resource Service API
+paths:
+  /orders:
+    post:
+      summary: Create a new order
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: orderData
+          description: Order data
+          required: true
+          schema:
+            $ref: "#/definitions/OrderData"
+      responses:
+        201:
+          description: Order created successfully
+        400:
+          description: Invalid input or missing required fields
+        500:
+          description: Internal server error
+      x-domain-responses:
+        - code: CREATED
+          description: Order has been created
+        - code: ERROR
+          description: Error occurred while processing the order
+        - code: NO_RESPONSE
+          description: No response received for the order
+definitions:
+  OrderData:
+    type: object
+    properties:
+      email:
+        type: string
+      order_date:
+        type: string
+        format: date
+      cpu_cores:
+        type: integer
+      memory:
+        type: integer
+      disk_space:
+        type: integer
+      os_type:
+        $ref: "#/definitions/OsType"
+      ip_addresses:
+        type: integer
+  OsType:
+    type: string
+    enum:
+      - windows
+      - ubuntu
+      - debian
+      - freebsd

@@ -1,0 +1,68 @@
+@startuml  cloud_order
+
+package Database <<database>> {
+    class Users {
+        + id: int
+        + email: varchar
+    }
+    enum OsType {
+        Windows
+        Ununtu
+        Debian
+        FreeBSDнапи
+    }
+    class Orders {
+        + id: int
+        + user_id: int
+        + order_date: date
+        + cpu_cores: int
+        + memory: int
+        + disk_space: int
+        + os_type: OsType
+        + ip_addresses: int
+    }
+    OsType --> Orders
+    Users "1" --> "many" Orders : user_id
+}
+
+package Model <<rectangle>> {
+    class OrderData {
+        + email: string
+        + order_date: date
+        + cpu_cores: int
+        + memory: int
+        + disk_space: int
+        + os_type: OsType
+        + ip_addresses: int
+    }
+
+    interface IOrdersRepo {
+        addOrder(orderData: OrderData):void
+    }
+
+    class OrderServiceImpl implements IOrdersRepo {
+
+    }
+    OrderServiceImpl <-- OrderData
+}
+
+class View {
+        + email: string
+        + cpu_cores: int
+        + memory: int
+        + disk_space: int
+        + os_type: OsType
+        + ip_addresses: int
+        + submit() void
+}
+
+class CloudOrderPresenter {
+    - view: View
+    - repo: IOrdersRepo
+    + renderForm():void
+    + submitForm():void
+}
+CloudOrderPresenter *-- View
+CloudOrderPresenter *-- IOrdersRepo
+Model --> Database
+@enduml
