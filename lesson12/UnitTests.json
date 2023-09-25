@@ -1,0 +1,132 @@
+{
+    "tests": [
+        {
+            "method": "register_user",
+            "expected_result": "успешная регистрация пользователя"
+        },
+        {
+            "method": "login_user",
+            "expected_result": "успешный вход пользователя"
+        },
+        {
+            "method": "connect_device",
+            "expected_result": "успешное подключение устройства"
+        },
+        {
+            "method": "get_all_rooms",
+            "expected_result": "успешное получение всех комнат"
+        },
+        {
+            "method": "add_room",
+            "expected_result": "успешное добавление новой комнаты"
+        },
+        {
+            "method": "delete_room",
+            "expected_result": "успешное удаление комнаты"
+        },
+        {
+            "method": "update_room",
+            "expected_result": "успешное обновление комнаты"
+        },
+        {
+            "method": "get_all_schedule_tasks",
+            "expected_result": "успешное получение всех задач расписания"
+        },
+        {
+            "method": "add_schedule_task",
+            "expected_result": "успешное добавление новой задачи расписания"
+        },
+        {
+            "method": "delete_schedule_task",
+            "expected_result": "успешное удаление задачи расписания"
+        },
+        {
+            "method": "update_schedule_task",
+            "expected_result": "успешное обновление задачи расписания"
+        },
+        {
+            "method": "get_counters",
+            "expected_result": "успешное получение счетчиков"
+        },
+        {
+            "method": "get_cleaning_logs",
+            "expected_result": "успешное получение истории журнала уборки"
+        },
+        {
+            "method": "start_cleaning",
+            "expected_result": "успешный запуск уборки"
+        },
+        {
+            "method": "pause_cleaning",
+            "expected_result": "успешная приостановка уборки"
+        },
+        {
+            "method": "resume_cleaning",
+            "expected_result": "успешное возобновление уборки"
+        },
+        {
+            "method": "stop_cleaning",
+            "expected_result": "успешная остановка уборки"
+        },
+        {
+            "method": "get_device_status",
+            "expected_result": "успешное получение информации о состоянии устройства"
+        },
+        {
+            "method": "send_notification",
+            "expected_result": "успешная отправка уведомления пользователю"
+        },
+        {
+            "method": "get_last_error",
+            "expected_result": "успешное получение информации о последней ошибке"
+        },
+        {
+            "method": "execute_command",
+            "expected_result": "успешное выполнение команды на устройстве"
+        },
+        {
+            "method": "get_system_logs",
+            "expected_result": "успешное получение логов системы"
+        },
+        {
+            "method": "update_firmware",
+            "expected_result": "успешное обновление прошивки устройства"
+        },
+        {
+            "method": "check_device_availability",
+            "expected_result": "успешная проверка доступности устройства"
+        },
+        {
+            "method": "get_device_info",
+            "expected_result": "успешное получение информации об устройстве"
+        },
+        {
+            "method": "update_device_settings",
+            "expected_result": "успешное обновление настроек устройства"
+        },
+        {
+            "method": "get_device_settings",
+            "expected_result": "успешное получение настроек устройства"
+        },
+        {
+            "method": "get_sensor_data",
+            "expected_result": "успешное получение данных с датчиков"
+        },
+        {
+            "method": "set_sensor_threshold",
+            "expected_result": "успешное установление порога для датчика"
+        },
+        {
+            "method": "get_sensor_threshold",
+            "expected_result": "успешное получение порога для датчика"
+        },
+        {
+            "method": "get_device_logs",
+            "expected_result": "успешное получение логов устройства"
+        },
+        {
+            "method": "clear_device_logs",
+            "expected_result": "успешная очистка логов устройства"
+        }
+    ]
+}
