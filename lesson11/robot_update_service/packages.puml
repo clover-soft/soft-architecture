@@ -1,0 +1,47 @@
+@startuml packages 
+package WebUI <<frame>> {
+
+}
+package MobileUI <<frame>> {
+
+}
+package DesktopUI <<frame>> {
+
+}
+package Backend <<frame>> {
+
+}
+
+package Database <<database>> {
+
+}
+
+package SSO <<frame>> {
+
+}
+
+package RobotService <<frame>> {
+    package RobotServiceAuth <<folder>> {
+
+    }
+    package RobotController <<folder>>{
+
+    }
+    package RobotUpdateController <<folder>>{
+
+    }
+
+}
+
+package RobotDevice <<node>> {
+
+}
+Backend --> SSO
+RobotService --> SSO
+RobotService --> Database
+Backend --> Database
+MobileUI --> Backend
+DesktopUI --> Backend
+WebUI --> Backend
+RobotDevice --> RobotService
+@enduml
